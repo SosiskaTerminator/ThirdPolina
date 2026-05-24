@@ -89,8 +89,8 @@ void insert(Formular& main, Formular& words) {
 			if (main.prev) {
 				main.prev->next = new_node;
 				new_node->next = main.cur;
+				main.prev = main.cur;
 				main.cur = main.cur->next;
-				main.prev = new_node;
 			}
 			else {
 				new_node->next = main.head;

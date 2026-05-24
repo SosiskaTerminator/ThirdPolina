@@ -1,7 +1,7 @@
 a
  |
 \/
-ab
+abc
  |
 \/
 abc
@@ -78,13 +78,16 @@ abcdefghijklmnopqrstuvwxyz
 \/
 NULL
 
-qwerty
- |
-\/
 a
  |
 \/
-ab
+qwerty
+ |
+\/
+abc
+ |
+\/
+qwerty
  |
 \/
 abc
