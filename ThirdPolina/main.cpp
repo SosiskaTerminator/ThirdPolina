@@ -3,6 +3,16 @@
 
 using namespace std;
 
+void print(Formular& frm, fstream& file) {
+	frm.cur = frm.head;
+	while (frm.cur) {
+		file << *frm.cur << endl;
+
+		frm.cur = frm.cur->next;
+	}
+	file << endl;
+}
+
 /*
 in file "word.txt" first line:word to insert
 second line: word to search	
@@ -14,24 +24,13 @@ int main() {
 
 	get_text(main_text);
 
-	main_text.cur = main_text.head;
-	while (main_text.cur) {
-		file << *main_text.cur << endl;
-
-		main_text.cur = main_text.cur->next;
-	}
-	file << endl;
+	print(main_text, file);
 
 	get_words(words);
 
 	insert(main_text, words);
 
-	main_text.cur = main_text.head;
-	while (main_text.cur) {
-		file << *main_text.cur << endl;
-
-		main_text.cur = main_text.cur->next;
-	}
+	print(main_text, file);
 	
 	main_text.clear();
 	delete words.head;
